@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Luas Bangun Datar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+
+    }
+    body{
+        background: rgb(56,41,62);
+background: linear-gradient(90deg, rgba(56,41,62,1) 0%, rgba(123,123,154,1) 47%, rgba(38,70,77,1) 100%);
+    }
+    .column{
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 500px;
+    }
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .judul{
+        margin-top: 20px;
+        color: white;
+        text-align: center;
+    }
+    .hasil{
+        color: red;
+    }
+    .card{
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .title{
+        margin-bottom: 25px;
+    }
+</style>
+<body>
+    
+    <div class="row">
+        <div class="column position-relative">
+            <form>
+                <div class="card" style="width: 30rem; margin-left: 20px;">
+                    <div class="card-body">
+                      <h5 class="title"> Persegi</h5>
+                      <input type="number" class="form-control" placeholder="Masukkan Panjang" id="sisi"><br>
+                        <button style="margin-bottom: 10px;" onclick="persegi()" type="button" class="btn btn-success" >Hitung</button>
+                        <p>Hasil : <span class="hasil" id = "hasil"></span></p>
+                    </div>
+                  </div>
+            </form>
+            <form>
+                <div class="card" style="width: 30rem; margin-left: 20px;">
+                    <div class="card-body">
+                      <h5 class="title"> Persegi Panjang</h5>
+                      <input type="number" class="form-control" placeholder="Masukkan Panjang" id="panjang"><br>
+                      <input type="number" class="form-control" placeholder="Masukkan Lebar" id="lebar"><br>
+                      <button style="margin-bottom: 10px;" onclick="pp()" type="button" class="btn btn-success" >Hitung</button>
+                        <p>Hasil : <span class="hasil" id = "hasil2"></span></p>
+                    </div>
+                  </div>
+            </form>
+            <form>
+                <div class="card" style="width: 30rem; margin-left: 20px;">
+                    <div class="card-body">
+                      <h5 class="title"> Lingkaran</h5>
+                      <input type="number" class="form-control" placeholder="Masukkan Jari" id="jari"><br>
+                      <button style="margin-bottom: 10px;" onclick="lingkaran()" type="button" class="btn btn-success" >Hitung</button>
+                      <p>Hasil : <span class="hasil" id = "hasil3"></span></p>
+                  </div>
+            </form>
+        </div>
+        <!-- <div class="d-flex justify-content-center "> -->
+            <form>
+                <div class="card" style="width: 30rem; margin-left: 20px;">
+                    <div class="card-body">
+                      <h5 class="title"> Layang - Layang</h5>
+                      <input type="number" class="form-control" placeholder="Masukkan Diagonal 1" id="d1"><br>
+                      <input type="number" class="form-control" placeholder="Masukkan Diagonal 2" id="d2"><br>
+                        <button style="margin-bottom: 10px;" onclick="layang()" type="button" class="btn btn-success" >Hitung</button>
+                      <p>Hasil : <span class="hasil" id = "hasil4"></span></p>
+                  </div>
+                </div>
+            </form>
+            <form >
+                <div class="card" style="width: 30rem; margin-left: 20px; ">
+                    <div class="card-body">  
+                      <h5 class="title"> Segitiga</h5>
+                      <input type="number" class="form-control" placeholder="Masukkan Alas" id="alas"><br>
+                      <input type="number" class="form-control" placeholder="Masukkan Tinggi" id="tinggi"><br>
+                      <button style="margin-bottom: 10px;" onclick="segitiga()" type="button" class="btn btn-success" >Hitung</button>
+                      <p>Hasil : <span class="hasil" id = "hasil5"></span></p>
+                  </div>
+                </div>
+            </form>
+            <!-- <h3>Jajar Genjang</h3>
+            <form>
+                <p>Panjang : <input type="number" id="jari"></p>
+                <input type="button" onClick="jg()" Value="Hitung" />
+                </form>
+                <p>Hasil : <span id = "hasil6"></span></p>
+            </form> -->
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+<script>
+    function persegi(){
+    var sisi = document.getElementById("sisi").value;
+    luas = sisi * sisi;
+    document.getElementById("hasil").innerHTML= luas;
+}
+
+function pp(){
+    var lebar = document.getElementById("lebar").value;
+    var panjang = document.getElementById("panjang").value;
+    luas = panjang * lebar;
+    document.getElementById("hasil2").innerHTML= luas;
+}
+
+function lingkaran(){
+    var jari = document.getElementById("jari").value;
+    luas = 3.14 * jari * jari;
+    document.getElementById("hasil3").innerHTML= luas;
+} 
+
+function layang(){
+    var d1 = document.getElementById("d1").value;
+    var d2 = document.getElementById("d2").value;
+    luas = 2 / d1 * d2;
+    document.getElementById("hasil4").innerHTML= luas;
+}
+
+function segitiga(){
+    var alas = document.getElementById("alas").value;
+    var tinggi = document.getElementById("tinggi").value;
+    luas = alas * tinggi / 2;
+    document.getElementById("hasil5").innerHTML= luas;
+}
+</script>
+</html>

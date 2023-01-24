@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="container">
+      <form action="#">
+        <div class="title">Login</div>
+        <div class="input-box underline">
+          <input name="email" type="email" placeholder="Enter Your Email" required id="email">
+          <div class="underline"></div>
+        </div>
+        <div class="input-box">
+          <input name="password" type="password" placeholder="Enter Your Password" required id="password">
+          <div class="underline"></div>
+        </div>
+        <!-- <div class="input-color">
+            <input type="color" placeholder="" id="warna1" oninput="warna()">
+            <input type="color" placeholder="" id="warna2" oninput="warna()">
+            <input type="color" placeholder="" id="warna3" oninput="warna()">
+          </div> -->
+          <button onclick="checkData()" id="myButton" class="float-left submit-button" >Login</button>
+          <div class="regis">
+            <a href="regist.html"> Daftar Sekarang</a>
+        </div>  
+        </div>
+      </form>
+    </div>
+    <script src="main.js"></script>
+    <!-- <script type="text/javascript">
+        document.getElementById("myButton").onclick = function () {
+            location.href = "hitung.html";
+        };
+    </script> -->
+    <script>
+        function checkData(){
+            var EnterEmail = document.getElementById('email').value;
+            var EnterPassword = document.getElementById('password').value;
+
+            var getemail=localStorage.getItem('userEmail');
+            var getpassword=localStorage.getItem('userPassword');
+
+            if(EnterEmail == getemail){
+                if(EnterPassword == getpassword){
+                    
+                    alert("Login Successful");
+                    setTimeout(function(){
+                        document.location = "hitung.html";
+
+            }, 0);
+
+                    // window.location.href = "hitung.html";
+                }else{
+                    alert("Wrong Password");
+                }
+            }else{
+                alert("Invalid details");
+            }
+        }
+    </script>
+  </body>
+</html>

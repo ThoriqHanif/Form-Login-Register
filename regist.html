@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="container">
+      <form action="index.html">
+        <div class="title">Registrasi</div>
+        <div class="input-box">
+            <input id="name" name="name" type="text" placeholder="Enter Your Name" required>
+            <div class="underline"></div>
+          </div>
+        <div class="input-box underline">
+          <input id="email" name="email" type="email" placeholder="Enter Your Email" required>
+          <div class="underline"></div>
+        </div>
+        <div class="input-box">
+          <input id="password" name="password" type="password" placeholder="Enter Your Password" required>
+          <div class="underline"></div>
+        </div>
+        <!-- <div class="input-color">
+            <input type="color" placeholder="" id="warna1" oninput="warna()">
+            <input type="color" placeholder="" id="warna2" oninput="warna()">
+            <input type="color" placeholder="" id="warna3" oninput="warna()">
+          </div> -->
+          <button onclick="addData()" id="save_btn" class="float-left submit-button" ><a href="index.html">Daftar</a></button>
+    </div>
+    <script src="main.js"></script>
+    <!-- <script type="text/javascript">
+        document.getElementById("buttonDaftar").onclick = function () {
+            location.href = "index.html";
+        };
+    </script> -->
+    <script>
+        function addData(){
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+        
+        localStorage.setItem("userName",name)
+        localStorage.setItem("userEmail",email)
+        localStorage.setItem("userPassword",password)
+        }
+         </script>
+  </body>
+</html>
